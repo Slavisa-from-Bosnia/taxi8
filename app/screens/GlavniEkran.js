@@ -1,9 +1,9 @@
-import { AppRegistry, TextInput, Text, View } from 'react-native';
+import { AppRegistry, View } from 'react-native';
 import React, { Component } from 'react';
-import MapView from 'react-native-maps';
-import { Header, Icon, } from 'react-native-elements';
+import { Header } from 'react-native-elements';
 import {StackNavigator } from 'react-navigation';
 import Mapa from '../components/Mapa.js'
+import Label1 from '../components/Label1.js';
 
 export default class GlavniEkran extends Component {
 	static navigationOptions = {
@@ -32,7 +32,6 @@ export default class GlavniEkran extends Component {
 
 	navigator.geolocation.getCurrentPosition(success, error, options);
 	return (
-		
 		<View style={{
 				flex: 1,
 				}}  >
@@ -44,32 +43,16 @@ export default class GlavniEkran extends Component {
 					rightComponent={{ icon: 'home', color: '#fff' }}
 				/>
 			</View>
-			<View style={{
-				flex: 3.9 }} >
+			<View style={{flex: 3.9 }} >
 					<Mapa/>
 				
 			</View>
-			<View style={{
-			flex: 5 }} >
+			<View style={{flex: 5 }} >
 				
-				<View style={{ flexDirection: 'column', justifyContent: 'center', flex:7.5, alignItems: 'center', paddingLeft: 25, paddingRight: 25 }}>
-					<Text style={{fontSize: 18}} >
-						Da biste odredili putanju molimo pritisnite dugme u dnu ekrana
-					</Text>
-				</View>
-				<View style={{ flex:2.5, justifyContent: 'flex-end', flexDirection: 'row', paddingRight:15}} >
-					<Icon
-						reverse
-						name='ios-add'
-						type='ionicon'
-						color='#506d58' 
-						onPress = {() => navigate ('Profile')}
-					/>
-				</View>
-			</View>
+					<Label1/>
 		
-		</View>
-				
+			</View>
+		</View>	
 		);
 
 	}
