@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Icon} from 'react-native-elements';
-import {AppRegistry, View, Text} from 'react-native';
+import {View, Text} from 'react-native';
+import {StackNavigator } from 'react-navigation';
 
 export default class Label1 extends Component {
 	render (){
-		
+	
 		return(
 				<View style = {{flex:1}}>	
 					<View style={{ flexDirection: 'column', justifyContent: 'center', flex:7.5, alignItems: 'center', paddingLeft: 25, paddingRight: 25 }}>
@@ -18,7 +19,9 @@ export default class Label1 extends Component {
 							name='ios-add'
 							type='ionicon'
 							color='#506d58' 
-							onPress = {() => navigate ('Profile')}
+							onPress = {() => this.props.izbor()}
+							
+							
 						/>
 					</View>
 				</View>
